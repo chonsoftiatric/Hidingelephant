@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .container {
+    @apply max-w-[1440px] md:w-[90%] mx-auto p-3;
+  }
+  .section-container {
+    @apply max-w-[1000px] mx-auto;
+  }
+  .title {
+    @apply text-2xl sm:text-5xl lg:text-[56px] leading-8 sm:leading-[55px] lg:leading-[76px] font-bold;
+  }
+  .section-title {
+    @apply text-2xl sm:text-3xl lg:text-[44px] leading-8 sm:leading-[45px] lg:leading-[50px] font-bold;
+  }
+  .section {
+    @apply p-3 py-20 md:p-24 lg:p-32;
+  }
+  .card {
+    box-shadow: 0px 6px 32px 0px #e5e5e599;
+    @apply rounded-xl;
+  }
+  .divider {
+    @apply border-t border-light-gray w-full;
+  }
+}
+
+@media (min-width: 1400px) {
+  .prompt-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  .prompt-card-enlarged {
+    grid-column: span 3 / span 3 !important;
+  }
+}
+
+.vectorized_svg > svg > path:hover {
+  stroke: #ff0;
+  stroke-width: 4px;
+  cursor: pointer;
+}
+
+.credit-slider span[role="slider"] {
+  display: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.leftSideBar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.leftSideBar::-webkit-scrollbar-track {
+  padding: 2px;
+}
+
+.leftSideBar::-webkit-scrollbar-thumb {
+  background-color: #e5e7eb;
+  border-radius: 6px;
+}
+
+/* tooltip styles */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: white;
+  color: #000;
+  text-align: center;
+  border-radius: 6px;
+  padding: 6px 4px;
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
