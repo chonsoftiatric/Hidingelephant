@@ -1,0 +1,17 @@
+{
+  "crons": [
+    {
+      "path": "/api/cronjobs/resetCreditInfo",
+      "schedule": "0 0 1 * *"
+    },
+    {
+      "path": "/api/cronjobs/generateStatsReport",
+      "schedule": "0 * * * *"
+    }
+  ],
+  "functions": {
+    "src/app/**/*": {
+      "maxDuration": 300
+    }
+  }
+}
